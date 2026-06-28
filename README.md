@@ -35,3 +35,15 @@ A custom frameless window, glowing accent colors, animated transitions, and a po
 
 ---
 
+## 🖥️ Preview
+
+Live round in progress — the prediction panel shows the consensus target, the leaders who agree on it, and what history says about it:
+
+![Live round with prediction](docs/images/screenshot1.png)
+
+Between rounds — countdown overlay while the engine re-forecasts after every crash:
+
+![Waiting state with prediction detail](docs/images/screenshot2.png)
+
+---
+
