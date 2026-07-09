@@ -47,3 +47,23 @@ Between rounds — countdown overlay while the engine re-forecasts after every c
 
 ---
 
+## 🧠 Prediction Logic — "Follow the Best Bettors"
+
+Nobody can predict a random crash point. Instead of pretending to, the engine asks a different question:
+
+> *"If I had followed a crowd of virtual bettors with different playing styles over the last rounds — who would be winning right now, and what would they bet next?"*
+
+Every completed round, seven virtual bettors pick a cash-out target from their own personality. Their picks are scored against what actually happened, the winners' opinions are blended into one recommendation, and confidence is measured by two independent pieces of evidence.
+
+### The bettor table
+
+| Bettor | Style | Target behavior |
+|---|---|---|
+| 🎯 **Sniper** | grinder | Fixed low target — always cashes at **1.35x** |
+| ⚖️ **Mid-Liner** | steady | Fixed mid target — always cashes at **2.00x** |
+| 💭 **Dreamer** | lotto ticket | Fixed high target — always cashes at **4.50x** |
+| 🌊 **Momentum** | mood-driven | Starts at 2.0x; every sub-1.3x bust cuts ambition (−0.6), every 3x+ jackpot raises it (+0.9). Clamped to 1.2–3.5x |
+| 🔥 **Streaker** | streak hunter | Counts consecutive early busts (<1.5x). Short streak → patient 1.4x; 2–3 busts → 2.1x; 4+ busts → demands 2.7x |
+| 🙃 **Contrarian** | value hunter | Finds which rung of the ladder `[1.35, 1.75, 2.2, 2.7, 3.3]` was hit **least** in the last 10 rounds and camps there — betting it's due |
+| 🚀 **Hotshot** | hype chaser | Chases whatever range paid out in the last 3 rounds (clamped to 1.5–3x); nothing hot → grinds at 1.35x |
+
