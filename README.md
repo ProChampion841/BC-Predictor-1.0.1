@@ -67,3 +67,28 @@ Every completed round, seven virtual bettors pick a cash-out target from their o
 | 🙃 **Contrarian** | value hunter | Finds which rung of the ladder `[1.35, 1.75, 2.2, 2.7, 3.3]` was hit **least** in the last 10 rounds and camps there — betting it's due |
 | 🚀 **Hotshot** | hype chaser | Chases whatever range paid out in the last 3 rounds (clamped to 1.5–3x); nothing hot → grinds at 1.35x |
 
+### Scoring — recent form dominates
+
+Each bettor keeps a **decayed bankroll**. After every round, for a flat 1-unit stake:
+
+- **Hit** (crash ≥ their target): profit = `target − 1 − 0.01 × target` (payout minus house edge)
+- **Miss**: loss = `-1`
+
+Then every bankroll decays:
+
+```
+score = score × 0.92 + roundProfit
+```
+
+The 0.92 decay means each older round carries 8% less weight — roughly the **last 25 rounds decide who leads**, and old glory fades fast. A bettor who went cold loses influence until their numbers recover.
+
+### Blending — profits buy votes
+
+Only bettors **in profit** get a vote (if nobody is, the single top scorer speaks). Each voter's current target is weighted by their bankroll:
+
+```
+recommended = Σ(targetᵢ × scoreᵢ) / Σ(scoreᵢ)     (rounded to 2 decimals, min 1.10x)
+```
+
+So a rich Sniper quietly pulls the consensus low, while a hot Dreamer can pull it up.
+
