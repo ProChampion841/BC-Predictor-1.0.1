@@ -92,3 +92,14 @@ recommended = Σ(targetᵢ × scoreᵢ) / Σ(scoreᵢ)     (rounded to 2 decimal
 
 So a rich Sniper quietly pulls the consensus low, while a hot Dreamer can pull it up.
 
+### Confidence — evidence, not vibes
+
+Confidence is the product of two independent signals:
+
+1. **Empirical reach** — how often has history actually reached this target? Shrunk toward the theoretical curve (`0.99 / target`) so small samples can't make wild claims: `p = shrink × empirical + (1 − shrink) × theoretical`, where `shrink = min(1, rounds / 40)`.
+2. **Consensus strength** — do the leaders cluster tightly around one number (strong) or scatter across the board (weak)? Tight clusters score near 1.0, scattered opinions drag confidence down.
+
+```
+confidence = clamp(5..95, 100 × p × (0.55 + 0.45 × consensus))
+```
+
