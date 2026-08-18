@@ -103,3 +103,33 @@ Confidence is the product of two independent signals:
 confidence = clamp(5..95, 100 × p × (0.55 + 0.45 × consensus))
 ```
 
+### Worked scenarios
+
+**Scenario A — slow, low-grinding session** (last rounds full of 1.0x–1.4x busts):
+
+```
+Streaker sees 4 busts in a row      →  2.70x
+Momentum just took a −0.6 mood hit  →  1.40x
+Sniper / MidLiner / Hotshot         →  1.35x–2.00x
+Consensus blend                     →  1.35x
+Empirical: history hit 1.35x in 57 of 75 rounds (76%)
+→  Prediction: 1.35x  ·  Confidence: 95%  ·  "Sniper · history reached 1.35x in 57 of 75 rounds"
+```
+
+**Scenario B — session running hot** (recent 5.13x, 46.68x, 75.85x rounds):
+
+```
+Momentum rides a jackpot            →  2.90x
+Hotshot chases the 5x–46x action    →  3.00x
+Dreamer stays fixed                 →  4.50x
+Consensus blend (Dreamer leads)     →  3.76x
+Empirical: only 23 of 81 rounds reached 3.76x (28%) — leaders disagree
+→  Prediction: 3.76x  ·  Confidence: 16%  ·  "Dreamer, Sniper · history reached 3.76x in 23 of 81 rounds"
+```
+
+**Cold start:** below 5 rounds of history the engine refuses to guess and shows `warming up…` while it collects data.
+
+The reasoning trail under the confidence bar always shows *who* is leading and *why* — the panel never gives you a bare number without its evidence.
+
+---
+
