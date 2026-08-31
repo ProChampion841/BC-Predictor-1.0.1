@@ -133,3 +133,11 @@ The reasoning trail under the confidence bar always shows *who* is leading and *
 
 ---
 
+## 🛠️ Tech Stack
+
+- **Electron** — cross-platform desktop shell
+- **Vanilla JS + Canvas** — lightweight, dependency-free rendering for buttery-smooth charts
+- **Custom CSS** — fully hand-crafted dark theme with glow effects and animations
+
+---
+
