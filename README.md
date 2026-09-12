@@ -141,3 +141,23 @@ The reasoning trail under the confidence bar always shows *who* is leading and *
 
 ---
 
+## 🚀 Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- npm
+
+### Installation
+
+```bash
+npm install
+```
+
+### Run the app
+
+```bash
+npm start
+```
+
+That's it — the app launches straight into live monitoring mode.
+
