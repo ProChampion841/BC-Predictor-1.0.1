@@ -161,3 +161,13 @@ npm start
 
 That's it — the app launches straight into live monitoring mode.
 
+### Build the Windows installer
+
+```bash
+npm run dist:win
+```
+
+The NSIS installer is written to `release/BC-Predictor-Setup-<version>.exe`.
+
+---
+
