@@ -171,3 +171,24 @@ The NSIS installer is written to `release/BC-Predictor-Setup-<version>.exe`.
 
 ---
 
+## 📁 Project Structure
+
+```
+BC_Predictor/
+├── src/
+│   ├── main.js              # Electron main process & IPC wiring
+│   ├── preload.js           # Secure IPC bridge (contextIsolation)
+│   ├── crashEngine.js       # Round engine & game loop
+│   ├── predictor.js         # "Follow the Best Bettors" prediction engine
+│   └── renderer/
+│       ├── index.html       # App layout
+│       ├── styles.css       # Dark glowing UI theme
+│       └── renderer.js      # UI logic & live updates
+├── docs/
+│   └── images/              # App screenshots
+├── electron-builder.yml     # Packaging config
+└── package.json
+```
+
+---
+
