@@ -192,3 +192,12 @@ BC_Predictor/
 
 ---
 
+## ⚙️ Customization
+
+- **Alert threshold** — set any multiplier in the Alerts panel to get notified the moment it's hit.
+- **Window controls** — minimize, maximize, and close with the custom titlebar.
+- **Theme colors** — tweak `src/renderer/styles.css` to match your own style.
+- **Tune the ensemble** — bettor personalities, decay rate (`DECAY = 0.92`) and the minimum history guard all live at the top of `src/predictor.js`.
+
+---
+
