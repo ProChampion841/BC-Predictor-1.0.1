@@ -201,3 +201,10 @@ BC_Predictor/
 
 ---
 
+## 📄 License
+
+MIT — use it, modify it, make it your own.
+
+---
+
+<p align="center">Built for crash game enthusiasts who like to watch the numbers climb. 📈</p>
